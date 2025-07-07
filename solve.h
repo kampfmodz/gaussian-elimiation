@@ -1,0 +1,1 @@
+double *solve(double **matrix, int n);
