@@ -12,7 +12,7 @@ int main(int argc, char const *argv[])
         matrix[i] = (double *)malloc((size + 1) * sizeof(double));
     }
 
-    double *result = example3(matrix, size);
+    double *result = example1(matrix, &size);
 
     if (!result)
     {
@@ -21,7 +21,7 @@ int main(int argc, char const *argv[])
     }
 
     printf("\n---- Ergebnisse ----\n");
-    for (int i = 0; i < sizeof(result); i++)
+    for (int i = 0; i < size; i++)
     {
         printf("\nx%d - %f\n", i + 1, result[i]);
     }

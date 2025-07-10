@@ -1,6 +1,6 @@
 #include "solve.h"
 
-double *example1(double **matrix, int n)
+double *example1(double **matrix, int *n)
 {
     // matrix daten
     // erst Zeile, dann Spalte
@@ -20,10 +20,10 @@ double *example1(double **matrix, int n)
     matrix[1][3] = 2;
     matrix[2][3] = 0;
 
-    return solve(matrix, n);
+    return solve(matrix, *n);
 }
 
-double *example2(double **matrix, int n)
+double *example2(double **matrix, int *n)
 {
     // matrix daten
     // erst Zeile, dann Spalte
@@ -43,16 +43,16 @@ double *example2(double **matrix, int n)
     matrix[1][3] = 9;
     matrix[2][3] = 0;
 
-    return solve(matrix, n);
+    return solve(matrix, *n);
 }
 
-double *example3(double **matrix, int n)
+double *example3(double **matrix, int *n)
 {
-    n = 2;
-    matrix = (double **)malloc(n * sizeof(double *));
-    for (int i = 0; i < n; i++)
+    *n = 2;
+    matrix = (double **)malloc(*n * sizeof(double *));
+    for (int i = 0; i < *n; i++)
     {
-        matrix[i] = (double *)malloc((n + 1) * sizeof(double));
+        matrix[i] = (double *)malloc((*n + 1) * sizeof(double));
     }
 
     // matrix daten
@@ -66,10 +66,10 @@ double *example3(double **matrix, int n)
     matrix[0][2] = -3;
     matrix[1][2] = 1;
 
-    return solve(matrix, n);
+    return solve(matrix, *n);
 }
 
-double *example4(double **matrix, int n)
+double *example4(double **matrix, int *n)
 {
     // matrix daten
     // erst Zeile, dann Spalte
@@ -89,5 +89,5 @@ double *example4(double **matrix, int n)
     matrix[1][3] = 5;
     matrix[2][3] = 3;
 
-    return solve(matrix, n);
+    return solve(matrix, *n);
 }
